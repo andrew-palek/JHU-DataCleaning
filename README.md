@@ -5,6 +5,8 @@ This is the repo containing work for the Getting and Cleaning Data Course final 
 - run_analysis.R | R-Script which reduced and worked the source data to meet the below described objectives
 - Step4combinedData.rds | Combined Data file first requested in the project below saved in the .rds file format 
 - Step5AverageData.rds | Average Data file last requested in the project below saved in the .rds file format 
+- Step4combinedData.txt | Combined Data file first requested in the project below saved in the .txt file format 
+- Step5AverageData.txt | Average Data file last requested in the project below saved in the .txt file format
 
 ## Project Assignment
 The purpose of this project is to demonstrate your ability to collect, work with, and clean a data set.
