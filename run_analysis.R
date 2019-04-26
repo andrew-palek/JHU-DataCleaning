@@ -66,3 +66,8 @@ SubjectMean<-mutate(SubjectMean,AverageCategory='Subject')
 AverageData<-rbind(ActivityMean,SubjectMean)
 AverageData<-(select(AverageData,'AverageCategory',everything()))
 saveRDS(AverageData, file = "Step5AverageData.rds")
+
+# Resave Ouput as more difficut file type required for submission
+write.table(combinedData,"Step4CombinedData.txt",row.name=FALSE)
+write.table(AverageData,"Step5AverageData.txt",row.name=FALSE)
+
