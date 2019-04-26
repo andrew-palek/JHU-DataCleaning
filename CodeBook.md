@@ -4,6 +4,164 @@ This codebook describes the process, code, and output file associated with the G
 - The support documents were downloaded by my local machine from the following website: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 -  These files were unzipped into a root folder containing:"UCI HAR Dataset".  This root folder is considered the root for the script as well. 
 -  An R script file titled "run_Analysis.R" was created in the root folder
+# Reduced Data file descriptions
+## Step4CombinedData
+- Merges the training and the test sets to create one data set.
+- Extracts only the measurements on the mean and standard deviation for each measurement.
+- Uses descriptive activity names to name the activities in the data set
+- Appropriately labels the data set with descriptive variable names.
+
+Methods for selecting, reducing, and combining the data are described further below
+The file contains the following columns:
+SubjectNumber - This is the subject number associated with the row of values 
+ActivityName - The usefule name for the activity loaded from activity_labels.txt
+ActivityNumber - The less useful activity number used for the cross hash to Activity Name
+Data Type - lables the data as coming from the test or train data
+----- All below are as defined in in the features_info.txt (info contained below) ------
+tBodyAcc-mean()-X
+tBodyAcc-mean()-Y
+tBodyAcc-mean()-Z
+tGravityAcc-mean()-X
+tGravityAcc-mean()-Y
+tGravityAcc-mean()-Z
+tBodyAccJerk-mean()-X
+tBodyAccJerk-mean()-Y
+tBodyAccJerk-mean()-Z
+tBodyGyro-mean()-X
+tBodyGyro-mean()-Y
+tBodyGyro-mean()-Z
+tBodyGyroJerk-mean()-X
+tBodyGyroJerk-mean()-Y
+tBodyGyroJerk-mean()-Z
+tBodyAccMag-mean()
+tGravityAccMag-mean()
+tBodyAccJerkMag-mean()
+tBodyGyroMag-mean()
+tBodyGyroJerkMag-mean()
+fBodyAcc-mean()-X
+fBodyAcc-mean()-Y
+fBodyAcc-mean()-Z
+fBodyAccJerk-mean()-X
+fBodyAccJerk-mean()-Y
+fBodyAccJerk-mean()-Z
+fBodyGyro-mean()-X
+fBodyGyro-mean()-Y
+fBodyGyro-mean()-Z
+fBodyAccMag-mean()
+fBodyBodyAccJerkMag-mean()
+fBodyBodyGyroMag-mean()
+fBodyBodyGyroJerkMag-mean()
+tBodyAcc-std()-X
+tBodyAcc-std()-Y
+tBodyAcc-std()-Z
+tGravityAcc-std()-X
+tGravityAcc-std()-Y
+tGravityAcc-std()-Z
+tBodyAccJerk-std()-X
+tBodyAccJerk-std()-Y
+tBodyAccJerk-std()-Z
+tBodyGyro-std()-X
+tBodyGyro-std()-Y
+tBodyGyro-std()-Z
+tBodyGyroJerk-std()-X
+tBodyGyroJerk-std()-Y
+tBodyGyroJerk-std()-Z
+tBodyAccMag-std()
+tGravityAccMag-std()
+tBodyAccJerkMag-std()
+tBodyGyroMag-std()
+tBodyGyroJerkMag-std()
+fBodyAcc-std()-X
+fBodyAcc-std()-Y
+fBodyAcc-std()-Z
+fBodyAccJerk-std()-X
+fBodyAccJerk-std()-Y
+fBodyAccJerk-std()-Z
+fBodyGyro-std()-X
+fBodyGyro-std()-Y
+fBodyGyro-std()-Z
+fBodyAccMag-std()
+fBodyBodyAccJerkMag-std()
+fBodyBodyGyroMag-std()
+fBodyBodyGyroJerkMag-std()
+
+## step5AverageData.rds
+- From the "step4CombinedData, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+Methods for selecting, reducing, and combining the data are described further below
+The file contains the following columns:
+AverageCategory - Defines if the average is grouped by the "Activity" or "Subject"
+AverageOf - Specifis the "Activity" or "Subject" for the Average
+----- The means of the titled columns grouped by the AverageCategory and AverageOf, origional values are are as defined in in the features_info.txt (info contained below) ------
+tBodyAcc-mean()-X
+tBodyAcc-mean()-Y
+tBodyAcc-mean()-Z
+tGravityAcc-mean()-X
+tGravityAcc-mean()-Y
+tGravityAcc-mean()-Z
+tBodyAccJerk-mean()-X
+tBodyAccJerk-mean()-Y
+tBodyAccJerk-mean()-Z
+tBodyGyro-mean()-X
+tBodyGyro-mean()-Y
+tBodyGyro-mean()-Z
+tBodyGyroJerk-mean()-X
+tBodyGyroJerk-mean()-Y
+tBodyGyroJerk-mean()-Z
+tBodyAccMag-mean()
+tGravityAccMag-mean()
+tBodyAccJerkMag-mean()
+tBodyGyroMag-mean()
+tBodyGyroJerkMag-mean()
+fBodyAcc-mean()-X
+fBodyAcc-mean()-Y
+fBodyAcc-mean()-Z
+fBodyAccJerk-mean()-X
+fBodyAccJerk-mean()-Y
+fBodyAccJerk-mean()-Z
+fBodyGyro-mean()-X
+fBodyGyro-mean()-Y
+fBodyGyro-mean()-Z
+fBodyAccMag-mean()
+fBodyBodyAccJerkMag-mean()
+fBodyBodyGyroMag-mean()
+fBodyBodyGyroJerkMag-mean()
+tBodyAcc-std()-X
+tBodyAcc-std()-Y
+tBodyAcc-std()-Z
+tGravityAcc-std()-X
+tGravityAcc-std()-Y
+tGravityAcc-std()-Z
+tBodyAccJerk-std()-X
+tBodyAccJerk-std()-Y
+tBodyAccJerk-std()-Z
+tBodyGyro-std()-X
+tBodyGyro-std()-Y
+tBodyGyro-std()-Z
+tBodyGyroJerk-std()-X
+tBodyGyroJerk-std()-Y
+tBodyGyroJerk-std()-Z
+tBodyAccMag-std()
+tGravityAccMag-std()
+tBodyAccJerkMag-std()
+tBodyGyroMag-std()
+tBodyGyroJerkMag-std()
+fBodyAcc-std()-X
+fBodyAcc-std()-Y
+fBodyAcc-std()-Z
+fBodyAccJerk-std()-X
+fBodyAccJerk-std()-Y
+fBodyAccJerk-std()-Z
+fBodyGyro-std()-X
+fBodyGyro-std()-Y
+fBodyGyro-std()-Z
+fBodyAccMag-std()
+fBodyBodyAccJerkMag-std()
+fBodyBodyGyroMag-std()
+fBodyBodyGyroJerkMag-std()
+fBodyBodyGyroMag-std()
+fBodyBodyGyroJerkMag-std()
+
+
 ## run_analysis.R
 The processing scrip of this function reads in several downloaded files, processes the data and saves the required processed files.   This section will cover the step by step code process
 ### Setup the Workspace
@@ -67,6 +225,7 @@ To load this file into R, utilize the `readRDS('step5AverageData.rds')` command
 
 # Support codebooks provided in the origional data set:
 ## README.txt
+
 ==================================================================
 Human Activity Recognition Using Smartphones Dataset
 Version 1.0
