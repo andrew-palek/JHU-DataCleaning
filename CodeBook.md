@@ -13,10 +13,15 @@ This codebook describes the process, code, and output file associated with the G
 
 Methods for selecting, reducing, and combining the data are described further below
 The file contains the following columns:
-SubjectNumber - This is the subject number associated with the row of values 
+
+SubjectNumber - This is the subject number associated with the row of values  
+
 ActivityName - The usefule name for the activity loaded from activity_labels.txt
+
 ActivityNumber - The less useful activity number used for the cross hash to Activity Name
+
 Data Type - lables the data as coming from the test or train data
+
 ----- All below are as defined in in the features_info.txt (info contained below) ------
 tBodyAcc-mean()-X
 tBodyAcc-mean()-Y
@@ -89,8 +94,11 @@ fBodyBodyGyroJerkMag-std()
 - From the "step4CombinedData, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 Methods for selecting, reducing, and combining the data are described further below
 The file contains the following columns:
+
 AverageCategory - Defines if the average is grouped by the "Activity" or "Subject"
+
 AverageOf - Specifis the "Activity" or "Subject" for the Average
+
 ----- The means of the titled columns grouped by the AverageCategory and AverageOf, origional values are are as defined in in the features_info.txt (info contained below) ------
 tBodyAcc-mean()-X
 tBodyAcc-mean()-Y
